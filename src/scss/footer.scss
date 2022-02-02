@@ -1,3 +1,147 @@
 //====================================================================================================
+.footer {
+	a {
+		transition: color 0.3s ease 0s;
+		&:hover {
+			color: $mainOrangeColor;
+		}
+	}
+	&__container {
+	}
+
+	&__body {
+		@include adaptiveValue("padding-top", 80, 40);
+		@include adaptiveValue("padding-bottom", 50, 30);
+		@include adaptiveValue("column-gap", 80, 10);
+		border-top: 1px solid #d8d8d8;
+		display: grid;
+		grid-template-columns: em(250) 1fr em(290);
+		line-height: 150%;
+		color: $mainDarkGrayColor;
+		@media (max-width: $pc) {
+			grid-template-rows: auto auto;
+			grid-template-columns: 1fr 290px;
+		}
+		@media (max-width: $mobile) {
+			display: block;
+		}
+	}
+
+	&__contacts {
+	}
+
+	&__subscribe {
+	}
+
+	&__title {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 24, 20);
+		line-height: 29 / 24 * 100%;
+		color: #000000;
+		@include adaptiveValue("margin-bottom", 16, 10);
+		white-space: nowrap;
+		._spoller-init & {
+			display: flex;
+			width: 100%;
+			flex-direction: row-reverse;
+			align-items: center;
+			transition: all 0.3s ease 0s;
+			justify-content: space-between;
+			@extend ._icon-arrow-down;
+			&::before {
+				@extend %ic;
+				font-size: rem(12);
+				align-items: center;
+				transition: all 0.3s ease 0s;
+			}
+		}
+		&._spoller-active {
+			color: $mainOrangeColor;
+			&::before {
+				transform: rotate(-180deg);
+				color: $mainOrangeColor;
+			}
+		}
+	}
+
+	&__menu {
+	}
+}
+.contacts-footer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	@media (max-width: $pc) {
+		grid-column: span 2;
+	}
+	&__logo {
+		font-weight: 700;
+		font-size: rem(24);
+		line-height: 29 / 24 * 100%;
+		color: #000000;
+		margin-bottom: em(16);
+	}
+
+	&__item {
+		display: flex;
+		margin-bottom: em(16);
+		&::before {
+			padding-right: em(8);
+		}
+	}
+}
+
+.menu-footer {
+	@media (min-width: $mobile) {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__column {
+		@media (min-width: $mobile) {
+			flex: 0 1 33.333%;
+		}
+		@media (max-width: $mobile) {
+			padding: em(8) 0;
+		}
+	}
+
+	&__list li {
+		&:not(:last-child) {
+			margin-bottom: em(16);
+		}
+	}
+
+	&__link {
+	}
+}
+
+.subscribe-footer {
+	@media (max-width: $mobile) {
+		margin-top: em(20);
+	}
+	&__form {
+		display: flex;
+	}
+
+	&__input {
+		flex: 1 1 auto;
+		background: #f4f5f7;
+		height: em(45);
+		padding-left: em(12);
+		margin-right: em(3);
+		color: #828282;
+	}
+
+	&__btn {
+		transition: all 0.3s ease 0s;
+		height: em(45);
+		flex: 0 0 em(45);
+		background: #e89f71;
+		color: #fff;
+		&:hover {
+			background: #e98446;
+		}
+	}
+}
 
 //====================================================================================================
