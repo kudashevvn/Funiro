@@ -1,1 +1,26 @@
 // Заголовки, общие БЄМ блоки и проче...
+
+.slider-arrows {
+	display: grid;
+	column-gap: em(8);
+	grid-template-columns: repeat(2, em(48));
+}
+.slider-arrow {
+	border-radius: 50%;
+	height: em(48);
+	background-color: rgba(232, 159, 113, 0.301);
+	color: $mainOrangeColor;
+	cursor: pointer;
+	transition: color 0.3s ease 0s;
+	&__prev {
+		transform: rotate(90deg);
+	}
+
+	&__next {
+		transform: rotate(-90deg);
+	}
+	&:hover {
+		background-color: rgba(232, 159, 113, 1);
+		color: #fff;
+	}
+}

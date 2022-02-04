@@ -1,7 +1,8 @@
 //====================================================================================================
 .header {
-	position: relative;
-	background-color: #fcf8f3;
+	position: fixed;
+	z-index: 10;
+	width: 100%;
 	&__container {
 	}
 
@@ -46,6 +47,9 @@
 	@media (min-width: $mobile) {
 		flex: 0 1 420px;
 	}
+	._active {
+		background-color: #f1e6d8;
+	}
 
 	&._active {
 		.menu__body {
@@ -53,6 +57,7 @@
 			&::before {
 				content: "";
 				left: 0;
+				background-color: #f1e6d8;
 			}
 		}
 	}
@@ -65,8 +70,8 @@
 			overflow: auto;
 			width: 100%;
 			height: 100%;
-			padding: em(70) em(20) em(30) em(20);
 			background-color: #f1e6d8;
+			padding: em(70) em(20) em(30) em(20);
 			transition: left 0.3s ease 0s;
 			&::before {
 				content: "";
